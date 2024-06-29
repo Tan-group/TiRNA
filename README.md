@@ -20,7 +20,7 @@ The software contains two modules:
 
 ## Machine requirements:
 Linux operating systems
->=8 cores and CPU should have each core paird with 2 threads
+cores >=8 cores and CPU should have each core paird with 2 threads
 Gcc version (>= 7.5) supporting c++11 standard
 Python version (>= 3.11.5)
 
