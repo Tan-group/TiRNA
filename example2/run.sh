@@ -1,6 +1,4 @@
 #!/bin/bash
-#SBATCH -p pub
-#SBATCH -A tanzhijie1
 #SBATCH -n 16
 rm -rf result
 mkdir result
