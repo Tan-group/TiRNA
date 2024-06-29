@@ -1,5 +1,6 @@
 #!/bin/bash
 #SBATCH -n 16
+chmod +x op
 rm -rf secondary
 mkdir secondary
 cp secondary.c sx.c cat.c all.sh op config1.dat secondary
