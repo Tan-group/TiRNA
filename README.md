@@ -38,7 +38,6 @@ C_Mg 0
 N_cout 10 
                    
 Notes:
-
 Sampling_type: 1 and 0 corresponds to the sampling by replica-exchange Monte Carlo and the sampling by Monte Carlo simulated annealing; 
 Folding_steps: Number of steps for replica-exchange Monte Carlo or Monte Carlo annealing simulations in structure folding progress;
 Optimizing_steps: Number of steps in structure optimizing progress;
