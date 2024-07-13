@@ -50,10 +50,10 @@ The above shown parameters are our suggested ones.
 The predicted structures are given in a new directory "results", see "example1" for an example.  
 (a) The results are placed in the 'folder1';   
 (b) Folding_trajectory contains folding trajectories at different temperatures;  
-        CG_structures contains the predicted coarse-grained top 3D structures;  
-        Secondary_structure contains the predicted top-N secondary structures in dot-bracket form;  
-        All_atom_structure contains All_atom_structure corresponding top-N CG structures;  
-        Thermal_Stability contains the fractions of different states (Folded, Unfolded, Intermediate) at different temperatures recorded in thermal_stabiliy.dat' and the secondary structures in dot-bracket form at different temperatures.
+    CG_structures contains the predicted coarse-grained top 3D structures;    
+    Secondary_structure contains the predicted top-N secondary structures in dot-bracket form;    
+    All_atom_structure contains All_atom_structure corresponding top-N CG structures;    
+    Thermal_Stability contains the fractions of different states (Folded, Unfolded, Intermediate) at different temperatures recorded in 'thermal_stabiliy.dat' and the secondary structures in dot-bracket form at different temperatures.
 
 Notes: 	  
 (a) If you want to predict RNA 3D structures more accurately, the suggested step numbers should be >750000 (500000 is the minimum) for the folding steps and >500000 (100000 is the minimum) for the optimizing steps;  
