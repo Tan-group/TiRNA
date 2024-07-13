@@ -10,7 +10,7 @@ The model has three main features:
 (3) Replica-exchange Monte Carlo/Monte Carlo simulated annealing for structure sampling.
 
 The package of the model contains two modules:  
-(1) RNA 3D structure prediction: to predict 3D structures of RNAs from sequences and certain monovalent/divalent ion conditions or from secondary structures; 
+(1) RNA 3D structure prediction: to predict 3D structures of RNAs from sequences and certain monovalent/divalent ion conditions or from secondary structures;
 (2) RNA thermal stability prediction: to predict melting temperatures and thermal unfolding pathway from sequences and certain monovalent/divalent ion conditions.  
 
 Machine requirements:
@@ -58,7 +58,7 @@ The predicted structures are given in a new directory "results", see "example1" 
 Notes: 	
 (a) If you want to predict RNA 3D structures more accurately, the suggested step numbers should be >750000 (500000 is the minimum) for the folding steps and >500000 (100000 is the minimum) for the optimizing steps;
 (b) If you want to predict RNA thermal stability more accurately, the suggested step number should be >4000000 (2000000 is the minimum) for the folding steps; 
-(c)  If you want to obtain the melting temperatures, please fit fractions of Folded or Unfolded states to a two-state model according to the references [1-3]. 
+(c) If you want to obtain the melting temperatures, please fit fractions of Folded or Unfolded states to a two-state model according to the references [1-3]. 
 
 
 
