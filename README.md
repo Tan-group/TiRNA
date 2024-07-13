@@ -1,4 +1,4 @@
-
+```markdown
 Readme for TiRNA package by Tan-group at Wuhan University
 
 TiRNA: a coarse-grained method with temperature and ion effects for RNA structure folding and prediction 
@@ -50,9 +50,9 @@ The above shown parameters are our suggested ones.
 The predicted structures are given in a new directory "results", see "example1" for an example.  
 (a) The results are placed in the 'folder1';   
 (b) Folding_trajectory contains folding trajectories at different temperatures;  
-    CG_structures contains the predicted coarse-grained top 3D structures;    
-    Secondary_structure contains the predicted top-N secondary structures in dot-bracket form;    
-    All_atom_structure contains All_atom_structure corresponding top-N CG structures;    
+    CG_structures contains the predicted coarse-grained top 3D structures;  
+    Secondary_structure contains the predicted top-N secondary structures in dot-bracket form;  
+    All_atom_structure contains All_atom_structure corresponding top-N CG structures;  
     Thermal_Stability contains the fractions of different states (Folded, Unfolded, Intermediate) at different temperatures recorded in 'thermal_stabiliy.dat' and the secondary structures in dot-bracket form at different temperatures.
 
 Notes: 	  
@@ -82,3 +82,4 @@ References:
 [2] Wang X, Tan YL, Yu S, Shi YZ, & Tan ZJ. 2023. Predicting 3D structures and stabilities for complex RNA pseudoknots in ion solutions. Biophys J. 122, 1503-1516.  
 [3] Shi YZ, Wang FH, Wu YY, & Tan ZJ. 2014. A coarse-grained model with implicit salt for RNAs: Predicting 3D structure, stability and salt effect. J Chem Phys. 2014, 141, 105102.  
 [4] Stasiewicz J, Mukherjee S, Nithin C, & Bujnicki JM. 2019. QRNAS: Software tool for refinement of nucleic acid structures. BMC Struct Biol. 19, 5.
+```
