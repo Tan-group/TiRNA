@@ -235,6 +235,21 @@ void secondary()
          	}
        	}
        	N_stem=order;
+	int structure=0;
+	for(i=0;i<20;i++)
+	{
+		for(j=0;j<20;j++)
+		{
+			if(stem_i[i][j]==1||stem_j[i][j]==1)
+			{
+				structure=1;
+			}
+		}
+	}
+	if(structure==0)
+	{
+		fprintf(fp3,"%d %c %d %c\n",0,'A',0,'A');
+	}
     	if(N_stem<=5)
     	{
       		for(i=1;i<=N_stem;i++)

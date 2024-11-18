@@ -76,8 +76,11 @@ int main(int argc, char *argv[])
     while(!feof(fpcs))
     {
     	fscanf(fpcs,"%d %c %d %c\n",&ai,&ax,&aj,&ay);
-    	se[ai*3][aj*3]=1;
-    	c[ai*3]=1;c[aj*3]=1;
+	if(ai!=0)
+	{
+    		se[ai*3][aj*3]=1;
+    		c[ai*3]=1;c[aj*3]=1;
+	}
     }
     fclose(fpcs);
    /* printf("Sequence:");

@@ -242,7 +242,7 @@ void replica()
 void openfile()
 {
 
-     	int i,duo1,duo2;
+     	int i,duo1,duo2,result;
     	char filename[20];
      	Infor=fopen("Information.dat","w+");
      	fp=fopen("ch_0.dat","r+");
@@ -250,7 +250,7 @@ void openfile()
      	i=1;
      	while(!feof(fp)) 
      	{
-         	fscanf(fp,"%d %d %s %f %f %f %f %f %f\n",&duo1,&duo2,&rtype0[i],&rx0[i],&ry0[i],&rz0[i],&rR0[i],&rQ0[i],&rf0[i]); 
+         	result=fscanf(fp,"%d %d %s %f %f %f %f %f %f\n",&duo1,&duo2,&rtype0[i],&rx0[i],&ry0[i],&rz0[i],&rR0[i],&rQ0[i],&rf0[i]); 
          	i++;
      	}      
      	fclose(fp); 
@@ -265,7 +265,7 @@ void openfile()
       	int ca,cb,cc,cd,ce,ct;
       	while(!feof(fpcfig))
       	{
-      		fscanf(fpcfig,"%d %d %d %d %d %d\n",&ct,&ca,&cb,&cc,&cd,&ce);
+      		result=fscanf(fpcfig,"%d %d %d %d %d %d\n",&ct,&ca,&cb,&cc,&cd,&ce);
       	}
       	if(ca>=2000000)	
       	{
@@ -288,6 +288,7 @@ void openfile()
       	{
       		ccb[i]=cb;ccc[i]=cc;ccd[i]=cd;
       	}   
+      	(void)result;
       	fclose(fpcfig);   
 }
 
@@ -348,10 +349,10 @@ void Parameters_T()
      	} // q4=b/lB &稀溶液修正
      	if(N<=13) 		
      	{
-     		if(t0<=55)	{B0=-9.0;}
-     		else 		{B0=-11.0;}
+     		if(t0<=55)	{B0=-9.3;}
+     		else 		{B0=-11.3;}
      	}
-     	else if(N>13&&N<20)     { B0=-10.3;}
+     	else if(N>13&&N<20)     { B0=-10.6;}
      	else 			{ B0=-12.0;}              
      	Bs_stacking();
 }

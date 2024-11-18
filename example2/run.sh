@@ -11,4 +11,5 @@ cd folder
 python config.py
 g++ main.c
 ./a.out
+rm -rf model secondary optimize
 cd ..

@@ -7,7 +7,7 @@
 char rna_sequence[10000];
 int s[1000][1000],c[1000],N0;
 int tertiary[1000];
-FILE *fp,*fp1,*fp2,*fp3,*fp4,*fp5,*fp6;
+FILE *fp,*fp1,*fp2,*fp3,*fp4,*fp5;
 char type[1000];
 int main()
 {
@@ -20,7 +20,6 @@ int main()
     	fp3=fopen("cs.dat","r+");
     	fp4=fopen("cs1.dat","w+");
     	fp5=fopen("state.dat","w+");
-    	fp6=fopen("RNA_type","w+");
     	if (fgets(rna_sequence, MAX_LENGTH, fp) == NULL) 
     	{
         	perror("Error reading RNA sequence");
@@ -45,11 +44,18 @@ int main()
     	while(!feof(fp3))
     	{
     		fscanf(fp3,"%d %c %d %c %d\n",&ai,&ax,&aj,&ay,&ad);
-    		s[ai*3][aj*3]=1;c[ai*3]=1;c[aj*3]=1;tertiary[ai*3]=ad;tertiary[aj*3]=ad;
-    		type[ai*3]=ax;type[aj*3]=ay;
+    		if(ai!=0)
+    		{
+    			s[ai*3][aj*3]=1;c[ai*3]=1;c[aj*3]=1;tertiary[ai*3]=ad;tertiary[aj*3]=ad;
+    			type[ai*3]=ax;type[aj*3]=ay;
+    		}
+    		else
+    		{
+    			fprintf(fp4,"%d %c %d %c %d\n",0,'A',0,'A',0);
+    		}
     	}
      	secondary();      
-     	fclose(fp1);fclose(fp2);fclose(fp3);fclose(fp4);fclose(fp5);fclose(fp6);
+     	fclose(fp1);fclose(fp2);fclose(fp3);fclose(fp4);fclose(fp5);
 } 
 
 
@@ -101,9 +107,9 @@ void secondary()
                     						{
                       							for(k2=3;k2<=kN;k2=k2+3)
                       							{
-                        							if(s[i-k1][j+k2]==1)
-                        							{ 
-                        								kk=1; 
+                        							if(i-k1>0&&j+k2<N0)
+                      								{
+                        								if(s[i-k1][j+k2]==1) { kk=1; }
                         							}
                       							}                                    
                     						}
@@ -111,9 +117,9 @@ void secondary()
                     						{
                       							for(k2=3;k2<=6;k2=k2+3)
                       							{
-                        							if(s[i-k1][j+k2]==1)
-                        							{ 
-                        								kk=1; 
+                        							if(i-k1>0&&j+k2<N0)
+                      								{
+                        								if(s[i-k1][j+k2]==1) { kk=1; }
                         							}
                       							}                                    
                     						}
@@ -121,9 +127,9 @@ void secondary()
                     						{
                       							for(k2=3;k2<=kN-6;k2=k2+3)
                       							{
-                        							if(s[i-k1][j+k2]==1)
-                        							{ 
-                        								kk=1; 
+                        							if(i-k1>0&&j+k2<N0)
+                      								{
+                        								if(s[i-k1][j+k2]==1) { kk=1; }
                         							}
                       							}                                    
                     						}
@@ -167,9 +173,9 @@ void secondary()
                     						{
                       							for(k2=3;k2<=kN;k2=k2+3)
                       							{
-                        							if(s[i-k1][j+k2]==1)
-                        							{ 
-                        								kk=1; 
+                        							if(i-k1>0&&j+k2<N0)
+                      								{
+                        								if(s[i-k1][j+k2]==1) { kk=1; }
                         							}
                       							}                                    
                     						}
@@ -177,9 +183,9 @@ void secondary()
                     						{
                       							for(k2=3;k2<=6;k2=k2+3)
                       							{
-                        							if(s[i-k1][j+k2]==1)
-                        							{ 
-                        								kk=1; 
+                        							if(i-k1>0&&j+k2<N0)
+                      								{
+                        								if(s[i-k1][j+k2]==1) { kk=1; }
                         							}
                       							}                                    
                     						}
@@ -187,9 +193,9 @@ void secondary()
                     						{
                       							for(k2=3;k2<=kN-6;k2=k2+3)
                       							{
-                        							if(s[i-k1][j+k2]==1)
-                        							{ 
-                        								kk=1; 
+                        							if(i-k1>0&&j+k2<N0)
+                      								{
+                        								if(s[i-k1][j+k2]==1) { kk=1; }
                         							}
                       							}                                    
                     						}
@@ -420,11 +426,6 @@ void secondary()
        	{
        		junction=1;
               //  printf("RNA is hairpin\n");
-              	fprintf(fp6,"%d\n",1);
-       	}
-       	else
-       	{
-       		fprintf(fp6,"%d\n",2);
        	}
       	int pse=0,k;
       	pseudoknot=0;

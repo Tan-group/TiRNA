@@ -8,7 +8,7 @@ cd ..
 	
 cp TiRNA_optimize.c center.c tc.c config1.dat optimize
 cd optimize
-gcc -Wall -fopenmp TiRNA_optimize.c -o TiRNA_optimize -lm
+gcc -O3 -Wall -fopenmp TiRNA_optimize.c -o TiRNA_optimize -lm
 ./TiRNA_optimize
 for((i=0;i<16;i++))
 do

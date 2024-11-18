@@ -12,7 +12,7 @@ cd initial
 cp RNA_type ../
 cd ..
 cd model
-gcc -Wall -fopenmp TiRNA_remc.c -o TiRNA_remc -lm
+gcc -O3 -Wall -fopenmp TiRNA_remc.c -o TiRNA_remc -lm
 ./TiRNA_remc
 cd ..
 bash optimize.sh

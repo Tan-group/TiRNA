@@ -74,9 +74,10 @@ int main()
  	i=1;
  	while(!feof(fp)) 
  	{
-          	fscanf(fp,"%d %d %s %f %f %f %f %f %f\n",&duo1,&duo2,&type[i],&x0[i],&y0[i],&z0[i],&R[i],&Q[i],&f[i]); 
+          	result=fscanf(fp,"%d %d %s %f %f %f %f %f %f\n",&duo1,&duo2,&type[i],&x0[i],&y0[i],&z0[i],&R[i],&Q[i],&f[i]); 
           	i++;
  	}
+	(void)result;
  	fclose(fp);        //input of the initial conformation 
  	N0=i-1;          //N0:Total number of CG beads; N: Num. of nt
  	N=(N0-1)/3;
@@ -97,7 +98,7 @@ int main()
 /*********************读入文件，读出文件，输入参数************************/
 void Put_File (void) 
 {
-	int i;
+	int i,result;
 	char filename[30];
  	fp=fopen("ch.dat","r+");                //initial conformation
  	for (i=0;i<thread;i++) 
@@ -115,8 +116,9 @@ void Put_File (void)
  	int ca,cb,cc,cd,ce,ct;
  	while(!feof(fpcfig))
  	{
- 		fscanf(fpcfig,"%d %d %d %d %d %d\n",&ct,&ca,&cb,&cc,&cd,&ce);
+ 		result=fscanf(fpcfig,"%d %d %d %d %d %d\n",&ct,&ca,&cb,&cc,&cd,&ce);
  	}
+	(void)result;
  	fclose(fpcfig);
  	total=ca;
  	CNa=cc;
@@ -168,10 +170,10 @@ void Parameters_T(float t0)
     	//printf("Temp: %f\nI: %ffNa: %f\n",tt,I,fNa); 
      	if(N<=13) 		
      	{
-     		if(t0<=55)	{B0=-9.0;}
-     		else 		{B0=-11.0;}
+     		if(t0<=55)	{B0=-9.3;}
+     		else 		{B0=-11.3;}
      	}
-     	else if(N>13&&N<20)     { B0=-10.3;}
+     	else if(N>13&&N<20)     { B0=-10.6;}
      	else 			{ B0=-12.0;}              
      	Bs_stacking();
     	fprintf(fp9,"Temp %f T %f Kd %f I %f Ek %f q4 %f\n",t0,T,Kd,I,Ek,q4); 

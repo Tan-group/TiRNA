@@ -118,6 +118,20 @@ void secondary()
           	} 
           	index++;
        	}
+       	int structure=0;
+       	for(i=1;i<N;i=i+3)
+       	{
+       		if(c[i]!=0)
+       		{
+       			structure=1;
+       			
+       		}
+       	}
+       	if(structure==0)
+       	{
+       		fprintf(fp2,"%d %c %d %c %d\n",0,'A',0,'A',0);
+       		fprintf(fp3,"%d %c %d %c %d\n",0,'A',0,'A',0);
+       	}
        	for(i=1;i<N;i++)
        	{
        		for(j=i+1;j<=N;j++)

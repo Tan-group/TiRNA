@@ -5,7 +5,7 @@ mkdir model
 bash initial.sh
 cp TiRNA_remc.c config1.dat model
 cd model
-gcc -Wall -fopenmp TiRNA_remc.c -o TiRNA_remc -lm
+gcc -O3 -Wall -fopenmp TiRNA_remc.c -o TiRNA_remc -lm
 ./TiRNA_remc
 cd ..
 cp t1.c model

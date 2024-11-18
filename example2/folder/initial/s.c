@@ -44,8 +44,15 @@ int main()
     	while(!feof(fp3))
     	{
     		fscanf(fp3,"%d %c %d %c %d\n",&ai,&ax,&aj,&ay,&ad);
-    		s[ai*3][aj*3]=1;c[ai*3]=1;c[aj*3]=1;tertiary[ai*3]=ad;tertiary[aj*3]=ad;
-    		type[ai*3]=ax;type[aj*3]=ay;
+    		if(ai!=0)
+    		{
+    			s[ai*3][aj*3]=1;c[ai*3]=1;c[aj*3]=1;tertiary[ai*3]=ad;tertiary[aj*3]=ad;
+    			type[ai*3]=ax;type[aj*3]=ay;
+    		}
+    		else
+    		{
+    			fprintf(fp4,"%d %c %d %c %d\n",0,'A',0,'A',0);
+    		}
     	}
      	secondary();      
      	fclose(fp1);fclose(fp2);fclose(fp3);fclose(fp4);fclose(fp5);

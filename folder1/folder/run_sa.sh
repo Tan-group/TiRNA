@@ -5,7 +5,7 @@ mkdir model
 bash initial.sh
 cp TiRNA_sa.c config1.dat model
 cd model
-gcc -Wall TiRNA_sa.c -o TiRNA_sa -lm
+gcc -O3 -Wall TiRNA_sa.c -o TiRNA_sa -lm
 ./TiRNA_sa
 cd ..
 cp t1.c model

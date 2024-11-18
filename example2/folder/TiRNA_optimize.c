@@ -61,7 +61,7 @@ int Move;
 /***************************************parallel********************************************/
 int    rt,rrt[N_thread],rNCG[N_thread],total[N_thread],cca[N_thread],ccb[N_thread],ccc[N_thread],ccd[N_thread];
 float rx[N_thread][1000],ry[N_thread][1000],rz[N_thread][1000],rR[N_thread][1000],rQ[N_thread][1000],rf[N_thread][1000],RU[N_thread];
-float rt0[15]={25.0,31.0,37.0,43.0,49.0,55.0,63.0,71.0,78.0,86.0,94.0,102.0,110.0,120.0,130.0};
+float rt0[N_thread+10]={25.0,31.0,37.0,43.0,49.0,55.0,63.0,71.0,78.0,86.0,94.0,102.0,110.0,120.0,130.0};
 char  rtype[N_thread][1000];
 int rp;
 int yi1[N_thread],yj1[N_thread],yi2[N_thread],yj2[N_thread],yi3[N_thread],yj3[N_thread],yi4[N_thread],yj4[N_thread],yi5[N_thread],yj5[N_thread];
@@ -72,7 +72,8 @@ int xi1,xj1,xi2,xj2,xi3,xj3,xi4,xj4,xi5,xj5;
 int si1,sj1,si2,sj2;
 float utrs,uutrs;
 int cycle,Nstrength;
-float NS1,NS2,Bs[30];
+float NS1,NS2;
+float Bs[24];
 float length1,length2,length3,length4,length5;
 FILE *fpconf[N_thread],*fpsec_struc[N_thread],*fpenergy[N_thread],*fp,*Infor,*fpcfig;
 
@@ -311,7 +312,7 @@ void openfile()
 {
 
 	FILE *fpb,*fpb1;
-     	int i,duo1,duo2;
+     	int i,duo1,duo2,result;
     	char filename[20];
      	Infor=fopen("Information.dat","w+");
      	fp=fopen("ch_0.dat","r+");
@@ -322,19 +323,19 @@ void openfile()
      	i=1;
      	while(!feof(fp)) 
      	{
-         	fscanf(fp,"%d %d %s %f %f %f %f %f %f\n",&duo1,&duo2,&rtype0[i],&rx0[i],&ry0[i],&rz0[i],&rR0[i],&rQ0[i],&rf0[i]); 
+         	result=fscanf(fp,"%d %d %s %f %f %f %f %f %f\n",&duo1,&duo2,&rtype0[i],&rx0[i],&ry0[i],&rz0[i],&rR0[i],&rQ0[i],&rf0[i]); 
          	i++;
      	}      
      	fclose(fp); 
      	rp=i-1; 
      	while(!feof(fpb))
  	{
-      		fscanf(fpb,"%d %d %d %d %d %d %d %d %d %d\n",&ya1,&ya2,&ya3,&ya4,&ya5,&ya6,&ya7,&ya8,&ya9,&ya10);
+      		result=fscanf(fpb,"%d %d %d %d %d %d %d %d %d %d\n",&ya1,&ya2,&ya3,&ya4,&ya5,&ya6,&ya7,&ya8,&ya9,&ya10);
  	}
  	fclose(fpb);
  	while(!feof(fpb1))
  	{
-      		fscanf(fpb1,"%d %d %d %d\n",&ya11,&ya12,&ya13,&ya14);
+      		result=fscanf(fpb1,"%d %d %d %d\n",&ya11,&ya12,&ya13,&ya14);
  	}
  	fclose(fpb1);
  	for(i=0;i<N_thread;i++)
@@ -358,12 +359,13 @@ void openfile()
       	int ca,cb,cc,cd,ce,ct;  
       	while(!feof(fpcfig))
       	{
-      		fscanf(fpcfig,"%d %d %d %d %d %d\n",&ct,&ca,&cb,&cc,&cd,&ce);
+      		result=fscanf(fpcfig,"%d %d %d %d %d %d\n",&ct,&ca,&cb,&cc,&cd,&ce);
       	} 
         for(i=0;i<N_thread;i++)
       	{
       		total[i]=cb;ccc[i]=cc;ccd[i]=cd;
       	}   
+      	(void)result;
       	fclose(fpcfig);      
 }
 
@@ -403,8 +405,8 @@ void Fixed_Atom(void)
 //******************************************//
 void Parameters_T()
 {
-    	float tt,TT;
-    	void Bs_stacking();
+        void Bs_stacking();
+    	float tt;
     	tt=25.0; 
     	T=273.15+tt*1.0; 
     	D=T*2.0*pow(10,-3);   
@@ -424,12 +426,16 @@ void Parameters_T()
         {
            	q4=qq4;
      	} // q4=b/lB &稀溶液修正 
-	TT=T-273.15;
-     	if(TT>=50&&TT<=90)        {B0=-0.068*TT-6.5;}
-     	else if(TT<50)            {B0=-0.068*50-6.5;}
-     	else                      {B0=-11.5;}
+	if(N<=13) 		
+     	{
+     		if(t0<=55)	{B0=-9.3;}
+     		else 		{B0=-11.3;}
+     	}
+     	else if(N>13&&N<20)     { B0=-10.6;}
+     	else 			{ B0=-12.0;}    
         Bs_stacking();
 }
+
 
 void Bs_stacking()
 {
@@ -704,8 +710,8 @@ float PCPC(int i1,float x1[1000],float y1[1000],float z1[1000])
  	else if (pp1>=1.0) {di=0.;}
  	else if (hh1>=0.) {di=acos(pp1);}
  	else {di=-acos(pp1);}
- 	if(c[i1]==1&&a[i1]==1)	{ud0=2.68*((1-cos(di-2.51))+0.5*(1-cos(3.*(di-2.51))));}
- 	else			{ud0=0.8*((1-cos(di-2.56))+0.5*(1-cos(3.*(di-2.56))));}
+ 	if(c[i1]==1&&a[i1]==1)	{ud0=(3.0*(1+cos(di+0.9))-4.9*(1+cos(2*di+1.9))+5.5*(1+cos(3*di+2.9))+5.6*(1+cos(4*di-2.3)));}
+ 	else			{ud0=(0.81*(1+cos(di+0.48))-0.10*(1+cos(2*di+2.71))+0.26*(1+cos(3*di+1.38))+0.17*(1+cos(4*di+0.56)));}
  	return ud0;
 }
 float CPCP(int i1,float x1[1000],float y1[1000],float z1[1000])
@@ -729,8 +735,8 @@ float CPCP(int i1,float x1[1000],float y1[1000],float z1[1000])
      	else if (pp1>=1.0) {di=0.;}
      	else if (hh1>=0.) {di=acos(pp1);}
      	else {di=-acos(pp1);}
-     	if(c[i1]==1&&a[i1]==1)	{ud0=10.5*((1-cos(di+2.92))+0.5*(1-cos(3.*(di+2.92))));}
-     	else			{ud0=3.6*((1-cos(di+2.92))+0.5*(1-cos(3.*(di+2.92))));}
+     	if(c[i1]==1&&a[i1]==1)	{ud0=(1.7*(1+cos(di-0.19))+0.76*(1+cos(2*di+2.87))-3.0*(1+cos(3*di-0.67))+4.26*(1+cos(4*di+2.29)));}
+     	else			{ud0=(0.54*(1+cos(di-0.40))+0.48*(1+cos(2*di+2.68))+0.43*(1+cos(3*di-0.84))+0.31*(1+cos(4*di+2.5)));}
    	return ud0;
 }
 float CPCN(int i1,float x1[1000],float y1[1000],float z1[1000])
@@ -754,14 +760,8 @@ float CPCN(int i1,float x1[1000],float y1[1000],float z1[1000])
     	else if (pp1>=1.0) {di=0.;}
      	else if (hh1>=0.) {di=acos(pp1);}
      	else {di=-acos(pp1);}
-     	if(c[i1]==1&&a[i1]==1)
-     	{
-     		ud0=3.8*((1-cos(di+1.18))+0.5*(1-cos(3.*(di+1.18))));
-     	}
-     	else
-     	{
-     		ud0=0.8*((1-cos(di+1.16))+0.5*(1-cos(3.*(di+1.16))));
-     	}
+     	if(c[i1]==1&&a[i1]==1)	{ud0=0.7*(-3.1*(1+cos(di+1.15))+23.56*(1+cos(2*di+5.10))-9.52*(1+cos(3*di-9.89))+13.35*(1+cos(4*di-2.59)));}
+     	else			{ud0=0.47*(1+cos(di-2.04))+0.33*(1+cos(2*di-0.96))+0.25*(1+cos(3*di+0.07))+0.19*(1+cos(4*di+1.98));}
    	return ud0;
 }
 float NCPC(int i1,float x1[1000],float y1[1000],float z1[1000])
@@ -797,8 +797,8 @@ float NCPC(int i1,float x1[1000],float y1[1000],float z1[1000])
    	{
         	di=-acos(pp1);
    	}
-   	if(c[i1]==1&&a[i1]==1)	{ud0=4.2*((1-cos(di-0.77))+0.5*(1-cos(3.*(di-0.77))));}
-   	else				{ud0=0.8*((1-cos(di-0.68))+0.5*(1-cos(3.*(di-0.68))));}
+   	if(c[i1]==1&&a[i1]==1)		{ud0=0.7*(-12.34*(1+cos(di-0.34))+14.65*(1+cos(2*di+1.91))+12.92*(1+cos(3*di+0.89))+12.21*(1+cos(4*di-2.64)));}
+   	else				{ud0=0.65*(1+cos(di+2.27))+0.20*(1+cos(2*di+1.57))+0.20*(1+cos(3*di+1.15))+0.06*(1+cos(4*di+0.18));}
    	return ud0;
 }
 /*  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */

@@ -1,0 +1,7 @@
+Sampling 1		   #Sampling 1 means simulation by repllica exchange Monte Carlo and Sampling 0 means simulations by Monte Carlo annealling 
+Folding_steps 10000	   #Number of steps for replica exchange Monte Carlo or Monte Carlo annealing simulations
+Optimizing_steps 10000    #Number of steps in optimizing progress
+CNa 0   	           #Concentration of Na (unit:mM)
+CMg 0			   #Concentration of Mg (unit:mM)
+Ncout 10                   #Number of predicted 3D structures
+

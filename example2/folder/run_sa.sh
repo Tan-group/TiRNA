@@ -9,7 +9,7 @@ cd secondary
 cp ch_0.dat ../model
 cd ..
 cd model
-gcc -Wall TiRNA_sa.c -o TiRNA_sa -lm
+gcc -O3 -Wall TiRNA_sa.c -o TiRNA_sa -lm
 ./TiRNA_sa
 cd ..
 bash optimize.sh
