@@ -1,4 +1,4 @@
-#TiRNA: a coarse-grained method with temperature and ion effects for RNA structure folding and prediction
+﻿#TiRNA: a coarse-grained method with temperature and ion effects for RNA structure folding and prediction
 
 ##Overview
 ================================================================
