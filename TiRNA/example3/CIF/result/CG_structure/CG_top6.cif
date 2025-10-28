@@ -1,0 +1,61 @@
+data_CG_top6
+#
+loop_
+_atom_site.group_PDB
+_atom_site.id
+_atom_site.type_symbol
+_atom_site.label_atom_id
+_atom_site.label_alt_id
+_atom_site.label_comp_id
+_atom_site.label_asym_id
+_atom_site.label_entity_id
+_atom_site.label_seq_id
+_atom_site.pdbx_PDB_ins_code
+_atom_site.Cartn_x
+_atom_site.Cartn_y
+_atom_site.Cartn_z
+_atom_site.occupancy
+_atom_site.B_iso_or_equiv
+_atom_site.auth_seq_id
+_atom_site.auth_asym_id
+_atom_site.pdbx_PDB_model_num
+ATOM 1  P P     . G A ? 1  ? 11.839 -3.921  2.535  None 0.0 1  A 1 
+ATOM 2  C 'C4'' . G A ? 1  ? 11.322 -6.564  -0.357 None 0.0 1  A 1 
+ATOM 3  N N9    . G A ? 1  ? 8.122  -6.870  0.427  None 0.0 1  A 1 
+ATOM 4  P P     . G A ? 2  ? 10.362 -3.653  -2.614 None 0.0 2  A 1 
+ATOM 5  C 'C4'' . G A ? 2  ? 7.971  -5.440  -5.312 None 0.0 2  A 1 
+ATOM 6  N N9    . G A ? 2  ? 5.230  -6.065  -3.288 None 0.0 2  A 1 
+ATOM 7  P P     . U A ? 3  ? 6.543  -2.554  -7.228 None 0.0 3  A 1 
+ATOM 8  C 'C4'' . U A ? 3  ? 2.962  -3.849  -7.617 None 0.0 3  A 1 
+ATOM 9  N N1    . U A ? 3  ? 1.618  -3.829  -4.597 None 0.0 3  A 1 
+ATOM 10 P P     . U A ? 4  ? 1.493  -0.415  -8.904 None 0.0 4  A 1 
+ATOM 11 C 'C4'' . U A ? 4  ? -2.082 -0.501  -7.447 None 0.0 4  A 1 
+ATOM 12 N N1    . U A ? 4  ? -1.154 -0.009  -4.254 None 0.0 4  A 1 
+ATOM 13 P P     . U A ? 5  ? -2.959 3.159   -8.388 None 0.0 5  A 1 
+ATOM 14 C 'C4'' . U A ? 5  ? -5.046 4.121   -5.067 None 0.0 5  A 1 
+ATOM 15 N N1    . U A ? 5  ? -2.125 4.452   -3.123 None 0.0 5  A 1 
+ATOM 16 P P     . C A ? 6  ? -5.584 7.661   -5.283 None 0.0 6  A 1 
+ATOM 17 C 'C4'' . C A ? 6  ? -4.748 8.306   -1.507 None 0.0 6  A 1 
+ATOM 18 N N1    . C A ? 6  ? -4.929 5.280   -0.209 None 0.0 6  A 1 
+ATOM 19 P P     . G A ? 7  ? -1.025 8.976   -0.559 None 0.0 7  A 1 
+ATOM 20 C 'C4'' . G A ? 7  ? 0.674  7.781   2.828  None 0.0 7  A 1 
+ATOM 21 N N9    . G A ? 7  ? 0.867  4.428   1.273  None 0.0 7  A 1 
+ATOM 22 P P     . G A ? 8  ? 4.273  9.392   2.692  None 0.0 8  A 1 
+ATOM 23 C 'C4'' . G A ? 8  ? 4.814  9.781   6.384  None 0.0 8  A 1 
+ATOM 24 N N9    . G A ? 8  ? 1.662  11.410  6.488  None 0.0 8  A 1 
+ATOM 25 P P     . G A ? 9  ? 3.428  6.293   7.659  None 0.0 9  A 1 
+ATOM 26 C 'C4'' . G A ? 9  ? -0.416 6.675   8.523  None 0.0 9  A 1 
+ATOM 27 N N9    . G A ? 9  ? -1.931 7.157   5.671  None 0.0 9  A 1 
+ATOM 28 P P     . A A ? 10 ? -0.628 2.944   8.502  None 0.0 10 A 1 
+ATOM 29 C 'C4'' . A A ? 10 ? -4.416 2.373   7.273  None 0.0 10 A 1 
+ATOM 30 N N9    . A A ? 10 ? -4.215 2.858   3.944  None 0.0 10 A 1 
+ATOM 31 P P     . A A ? 11 ? -4.133 -1.518  7.258  None 0.0 11 A 1 
+ATOM 32 C 'C4'' . A A ? 11 ? -6.664 -2.417  4.334  None 0.0 11 A 1 
+ATOM 33 N N9    . A A ? 11 ? -4.027 -1.549  2.158  None 0.0 11 A 1 
+ATOM 34 P P     . C A ? 12 ? -6.151 -6.176  4.577  None 0.0 12 A 1 
+ATOM 35 C 'C4'' . C A ? 12 ? -6.384 -7.159  0.692  None 0.0 12 A 1 
+ATOM 36 N N1    . C A ? 12 ? -3.607 -5.746  -0.934 None 0.0 12 A 1 
+ATOM 37 P P     . C A ? 13 ? -5.379 -10.899 0.334  None 0.0 13 A 1 
+ATOM 38 C 'C4'' . C A ? 13 ? -3.133 -10.429 -2.778 None 0.0 13 A 1 
+ATOM 39 N N1    . C A ? 13 ? -0.296 -9.246  -1.396 None 0.0 13 A 1 
+#
