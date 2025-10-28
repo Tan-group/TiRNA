@@ -13,6 +13,8 @@ TiRNA is a coarse-grained computational method developed by Tan-group at Wuhan U
 
 (3) Replica-exchange Monte Carlo & Monte Carlo simulated annealing for structure sampling;
 
+
+
 ###Package Modules:
 
 (1) RNA 3D Structure Prediction: Predicting 3D structures from sequences or secondary structures at given ion conditions;
@@ -34,18 +36,18 @@ TiRNA is a coarse-grained computational method developed by Tan-group at Wuhan U
 ##Installation
 ================================================================
 
-1. Download the TiRNA package
+1.Download the TiRNA package
 
-git clone https://github.com/Tan-group/TiRNA.git
+  git clone https://github.com/Tan-group/TiRNA.git
 
 
-2. Verify dependencies
+2.Verify dependencies
 
-gcc --version  # Should be ≥7.5;
+  gcc --version  # Should be ≥7.5;
 
-python --version  # Should be ≥3.11.5;
+  python --version  # Should be ≥3.11.5;
 
-python -c "import Bio; print(f'Biopython version: {Bio.__version__}')" #≥1.70 .
+  python -c "import Bio; print(f'Biopython version: {Bio.__version__}')" #≥1.70 .
 
 
 Usage Examples
@@ -75,22 +77,30 @@ C_Mg 0
 N_cout 10
 
 (3) Run the simulation with TiRNA
-bash run.sh
+    bash run.sh
+
 
 
 2.RNA 3D Structure Prediction with Given Secondary Structure
-Location: Run in from-2D-structure/
+
+  Location: Run in from-2D-structure/
 
 Steps:
 
 (1) Prepare sequence and secondary structure (seq.dat)
+ 
  Format: sequence followed by secondary structure in dot-bracket notation
+ 
  Example:
+
 GGAGGAAGGAGCCUCC
 (((((......)))))
+
 (2) Configure parameters (config.dat) - same as those in from-sequence
+
 (3) Run the simulation with TiRNA
-bash run.sh
+
+    bash run.sh
 
 
 3.RNA 3D Structure Prediction from Initial Structures
