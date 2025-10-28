@@ -48,8 +48,8 @@ Location: Run in from-sequence/
 Steps:
 
 (1) Prepare sequence file (seq.dat)  
-# Input your RNA sequence in seq.dat
-# Example:
+ Input your RNA sequence in seq.dat
+ Example:
 GGCGAUGUCCAGCAGAUACACGUCGUUCGCACC
 
 (2) Configure parameters (config.dat)
@@ -70,8 +70,8 @@ Location: Run in from-2D-structure/
 Steps:
 
 (1) Prepare sequence and secondary structure (seq.dat)
-# Format: sequence followed by secondary structure in dot-bracket notation
-# Example:
+ Format: sequence followed by secondary structure in dot-bracket notation
+ Example:
 GGAGGAAGGAGCCUCC
 (((((......)))))
 (2) Configure parameters (config.dat) - same as those in from-sequence
@@ -176,4 +176,5 @@ References
 [4] Stasiewicz J, Mukherjee S, Nithin C, & Bujnicki JM. 2019. QRNAS: Software tool for refinement of nucleic acid structures. BMC Struct Biol. 19, 5.
 
 TiRNA Package - Tan Group, Wuhan University
+
 
