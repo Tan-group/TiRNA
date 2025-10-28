@@ -38,16 +38,16 @@ TiRNA is a coarse-grained computational method developed by Tan-group at Wuhan U
 
 1.Download the TiRNA package
 
-  git clone https://github.com/Tan-group/TiRNA.git
+   git clone https://github.com/Tan-group/TiRNA.git
 
 
 2.Verify dependencies
 
-  gcc --version  # Should be ≥7.5;
+   gcc --version  # Should be ≥7.5;
 
-  python --version  # Should be ≥3.11.5;
+   python --version  # Should be ≥3.11.5;
 
-  python -c "import Bio; print(f'Biopython version: {Bio.__version__}')" #≥1.70 .
+   python -c "import Bio; print(f'Biopython version: {Bio.__version__}')" #≥1.70 .
 
 
 Usage Examples
@@ -70,10 +70,15 @@ GGCGAUGUCCAGCAGAUACACGUCGUUCGCACC
 (2) Configure parameters (config.dat)
 
 Sampling_type 1
+
 Folding_steps 750000
+
 Optimizing_steps 500000
+
 C_Na 1000
+
 C_Mg 0
+
 N_cout 10
 
 (3) Run the simulation with TiRNA
