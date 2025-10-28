@@ -107,8 +107,7 @@ Configuration Parameters
 
 | Parameter         | Description |
 |-------------------|-------------|
-| `Sampling_type`   | `1` for replica-exchange Monte Carlo (REMC),
-                      `0` for Monte Carlo simulated annealing (MCSA) |
+| `Sampling_type`   | `1` for replica-exchange Monte Carlo (REMC),`0` for Monte Carlo simulated annealing(MCSA) |
 | `Folding_steps`   | Number of steps for structure folding |
 | `Optimizing_steps`| Number of steps for structure optimization |
 | `C_Na`            | Na⁺ concentration in mM |
@@ -176,5 +175,4 @@ References
 [4] Stasiewicz J, Mukherjee S, Nithin C, & Bujnicki JM. 2019. QRNAS: Software tool for refinement of nucleic acid structures. BMC Struct Biol. 19, 5.
 
 TiRNA Package - Tan Group, Wuhan University
-
 
