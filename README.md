@@ -7,11 +7,14 @@ TiRNA is a coarse-grained computational method developed by Tan-group at Wuhan U
 
 ###Key Features:
 (1) Three-bead coarse-grained representation (P, C4', and N1/N9);
+
 (2) Force field accounting for temperature and ion effects;
+
 (3) Replica-exchange Monte Carlo & Monte Carlo simulated annealing for structure sampling;
 
 ###Package Modules:
 (1) RNA 3D Structure Prediction: Predicting 3D structures from sequences or secondary structures at given ion conditions;
+
 (2) RNA Thermal Stability Prediction: Predicting structures at various temperatures which can be used for analyzing melting temperatures and thermally unfolding pathways.
 
 
