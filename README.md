@@ -154,7 +154,7 @@ Post-Processing
 ================================================================
 
 To refine the predicted all-atom structures and remove potential steric clashes or chain breaks, use QRNAS:
-# Install QRNAS from: https://github.com/sunandan-mukherjee/QRNAS.git
+ Install QRNAS from: https://github.com/sunandan-mukherjee/QRNAS.git
 
 
 
