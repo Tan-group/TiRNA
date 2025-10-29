@@ -34,7 +34,7 @@ TiRNA is a coarse-grained computational method developed by Tan-group at Wuhan U
 ================================================================
 
 1.Download the TiRNA package
-- it clone https://github.com/Tan-group/TiRNA.git
+- git clone https://github.com/Tan-group/TiRNA.git
 
 
 2.Verify dependencies
@@ -180,4 +180,5 @@ References
 - [4] Stasiewicz J, Mukherjee S, Nithin C, & Bujnicki JM. 2019. QRNAS: Software tool for refinement of nucleic acid structures. BMC Struct Biol. 19, 5.
 
 TiRNA Package - Tan Group, Wuhan University
+
 
