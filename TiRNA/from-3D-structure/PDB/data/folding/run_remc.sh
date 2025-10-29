@@ -6,14 +6,14 @@ gcc -O3 -Wall -fopenmp TiRNA_remc.c -o TiRNA_remc -lm
 ./TiRNA_remc
 g++ convert_pdb.c
 ./a.out
-cp RNA_type ../wham
-cp RNA_type ../optimizing
 cd ..
 cd scoring-function
 bash scoring.sh
 cd ..
 cd folding
 bash secondary.sh
+cp RNA_type ../wham
+cp RNA_type ../optimizing
 cd ..
 cd optimizing
 bash optimize.sh
