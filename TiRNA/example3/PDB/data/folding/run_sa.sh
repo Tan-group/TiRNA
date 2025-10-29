@@ -6,14 +6,14 @@ gcc -O3 -Wall TiRNA_mcsa.c -o TiRNA_mcsa -lm
 ./TiRNA_mcsa
 g++ convert_pdb.c
 ./a.out
-cp RNA_type ../wham
-cp RNA_type ../optimizing
 cd ..
 cd scoring-function
 bash scoring.sh
 cd ..
 cd folding
 bash secondary.sh
+cp RNA_type ../wham
+cp RNA_type ../optimizing
 cd ..
 cd optimizing
 bash optimize.sh
