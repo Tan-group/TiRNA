@@ -6,13 +6,17 @@
 TiRNA is a coarse-grained computational method developed by Tan-group at Wuhan University for RNA structure modeling. The model incorporates the effects of temperature and ions to provide predictions for 3D structures and thermal stability of RNAs in monovalent/divalent ion solutions.
 
 ###Key Features:
-(1) Three-bead coarse-grained representation (P, C4', and N1/N9);
-(2) Force field accounting for temperature and ion effects;
-(3) Replica-exchange Monte Carlo & Monte Carlo simulated annealing for structure sampling;
+
+- (1) Three-bead coarse-grained representation (P, C4', and N1/N9);
+- (2) Force field accounting for temperature and ion effects;
+- (3) Replica-exchange Monte Carlo & Monte Carlo simulated annealing for structure sampling;
+
+
 
 ###Package Modules:
-(1) RNA 3D Structure Prediction: Predicting 3D structures from sequences or secondary structures at given ion conditions;
-(2) RNA Thermal Stability Prediction: Predicting structures at various temperatures which can be used for analyzing melting temperatures and thermally unfolding pathways.
+
+- (1) RNA 3D Structure Prediction: Predicting 3D structures from sequences or secondary structures at given ion conditions;
+- (2) RNA Thermal Stability Prediction: Predicting structures at various temperatures which can be used for analyzing melting temperatures and thermally unfolding pathways.
 
 
 
@@ -29,77 +33,78 @@ TiRNA is a coarse-grained computational method developed by Tan-group at Wuhan U
 ##Installation
 ================================================================
 
-1. Download the TiRNA package
-git clone https://github.com/Tan-group/TiRNA.git
+1.Download the TiRNA package
+- git clone https://github.com/Tan-group/TiRNA.git
 
 
-2. Verify dependencies
-gcc --version  # Should be ≥7.5;
-python --version  # Should be ≥3.11.5;
-python -c "import Bio; print(f'Biopython version: {Bio.__version__}')" #≥1.70 .
+2.Verify dependencies
+- gcc --version  # Should be ≥7.5;
+- python --version  # Should be ≥3.11.5;
+- python -c "import Bio; print(f'Biopython version: {Bio.__version__}')" #≥1.70 .
 
 
 Usage Examples
 ================================================================
 
-1. Prediction for RNA 3D Structure and Thermal Stability from Sequences 
+1.Prediction for RNA 3D Structure and Thermal Stability from Sequences 
+
 Location: Run in from-sequence/
 
 Steps:
 
 (1) Prepare sequence file (seq.dat)  
-# Input your RNA sequence in seq.dat
-# Example:
-GGCGAUGUCCAGCAGAUACACGUCGUUCGCACC
+- Input your RNA sequence in seq.dat
+- Example:
+- GGCGAUGUCCAGCAGAUACACGUCGUUCGCACC
 
 (2) Configure parameters (config.dat)
-Sampling_type 1
-Folding_steps 750000
-Optimizing_steps 500000
-C_Na 1000
-C_Mg 0
-N_cout 10
+- Sampling_type 1
+- Folding_steps 750000
+- Optimizing_steps 500000
+- C_Na 1000
+- C_Mg 0
+- N_cout 10
 
 (3) Run the simulation with TiRNA
-bash run.sh
+- bash run.sh
 
 
-2. RNA 3D Structure Prediction with Given Secondary Structure
-Location: Run in from-2D-structure/
+
+2.RNA 3D Structure Prediction with Given Secondary Structure
+- Location: Run in from-2D-structure/
 
 Steps:
 
 (1) Prepare sequence and secondary structure (seq.dat)
-# Format: sequence followed by secondary structure in dot-bracket notation
-# Example:
-GGAGGAAGGAGCCUCC
-(((((......)))))
+ - Format: sequence followed by secondary structure in dot-bracket notation
+ - Example:
+- GGAGGAAGGAGCCUCC
+- (((((......)))))
+
 (2) Configure parameters (config.dat) - same as those in from-sequence
+
 (3) Run the simulation with TiRNA
-bash run.sh
+- bash run.sh
 
 
-3. RNA 3D Structure Prediction from Initial Structures
+3.RNA 3D Structure Prediction from Initial Structures
 
 3A. From Initial Structure in PDB Format
-Location: Run in from-3D-structure/PDB
-Steps:
-(1) Place your initial PDB structure file in the directory;
-(2) Configure parameters in config.dat;
-(3) Run with bash run.sh.
+- Location: Run in from-3D-structure/PDB
+- Steps:
+- (1) Place your initial PDB structure file in the directory;
+- (2) Configure parameters in config.dat;
+- (3) Run with bash run.sh.
 
 
 3B. From 3D Structure in CIF Format 
-Location: Run in from-3D-structure/CIF
-Steps:
-(1) Place your initial CIF structure file in the directory;
-(2) Configure parameters in config.dat;
-(3) Run with bash run.sh.
+- Location: Run in from-3D-structure/CIF
+- Steps:
+- (1) Place your initial CIF structure file in the directory;
+- (2) Configure parameters in config.dat;
+- (3) Run with bash run.sh.
     
     
-    
-    
-
 Configuration Parameters
 ================================================================
 
@@ -107,8 +112,7 @@ Configuration Parameters
 
 | Parameter         | Description |
 |-------------------|-------------|
-| `Sampling_type`   | `1` for replica-exchange Monte Carlo (REMC),
-                      `0` for Monte Carlo simulated annealing (MCSA) |
+| `Sampling_type`   | `1` for replica-exchange Monte Carlo (REMC),`0` for Monte Carlo simulated annealing(MCSA) |
 | `Folding_steps`   | Number of steps for structure folding |
 | `Optimizing_steps`| Number of steps for structure optimization |
 | `C_Na`            | Na⁺ concentration in mM |
@@ -151,11 +155,21 @@ After successful execution, results are saved in the results/ directory:
 
 
 
+Software Usage Notes:
+================================================================
+- Place all input files in the data directory before running the program.
+- Only seq.dat is accepted as the input sequence file.
+- The program will overwrite the result output folder on each run. To preserve previous results:
+   - Rename the existing result folder, or
+   - Move it to another location before execution.
+
+
+
 Post-Processing
 ================================================================
 
 To refine the predicted all-atom structures and remove potential steric clashes or chain breaks, use QRNAS:
-# Install QRNAS from: https://github.com/sunandan-mukherjee/QRNAS.git
+- Install QRNAS from: https://github.com/sunandan-mukherjee/QRNAS.git
 
 
 
@@ -170,10 +184,10 @@ For questions or issues regarding TiRNA, please contact: zjtan@whu.edu.cn.
 References
 ================================================================
 
-[1] Wang X, Lou E, Yu S, Tan YL, Shi YZ, & Tan ZJ. 2025. TiRNA: a coarse-grained method with temperature and ion effects for RNA structure folding and prediction. In preparation.
-[2] Wang X, Tan YL, Yu S, Shi YZ, & Tan ZJ. 2023. Predicting 3D structures and stabilities for complex RNA pseudoknots in ion solutions. Biophys J. 122, 1503-1516.
-[3] Shi YZ, Wang FH, Wu YY, & Tan ZJ. 2014. A coarse-grained model with implicit salt for RNAs: Predicting 3D structure, stability and salt effect. J Chem Phys. 141, 105102.
-[4] Stasiewicz J, Mukherjee S, Nithin C, & Bujnicki JM. 2019. QRNAS: Software tool for refinement of nucleic acid structures. BMC Struct Biol. 19, 5.
+- [1] Wang X, Lou E, Yu S, Tan YL, Shi YZ, & Tan ZJ. 2025. TiRNA: a coarse-grained method with temperature and ion effects for RNA structure folding and prediction. In preparation.
+- [2] Wang X, Tan YL, Yu S, Shi YZ, & Tan ZJ. 2023. Predicting 3D structures and stabilities for complex RNA pseudoknots in ion solutions. Biophys J. 122, 1503-1516.
+- [3] Shi YZ, Wang FH, Wu YY, & Tan ZJ. 2014. A coarse-grained model with implicit salt for RNAs: Predicting 3D structure, stability and salt effect. J Chem Phys. 141, 105102.
+- [4] Stasiewicz J, Mukherjee S, Nithin C, & Bujnicki JM. 2019. QRNAS: Software tool for refinement of nucleic acid structures. BMC Struct Biol. 19, 5.
 
 TiRNA Package - Tan Group, Wuhan University
 
