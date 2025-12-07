@@ -156,9 +156,11 @@ After successful execution, results are saved in the results/ directory:
 
 Software Usage Notes:
 ================================================================
-- All input files must be placed in the data directory to run the program
-- Only seq.dat is accepted as an input sequence file
-- The program overwrites the output folder result, so users should either rename the folder or move it to another location before running the program
+- Place all input files in the data directory before running the program.
+- Only seq.dat is accepted as the input sequence file.
+- The program will overwrite the result output folder on each run. To preserve previous results:
+   - Rename the existing result folder, or
+   - Move it to another location before execution.
 
 Post-Processing
 ================================================================
@@ -185,6 +187,7 @@ References
 - [4] Stasiewicz J, Mukherjee S, Nithin C, & Bujnicki JM. 2019. QRNAS: Software tool for refinement of nucleic acid structures. BMC Struct Biol. 19, 5.
 
 TiRNA Package - Tan Group, Wuhan University
+
 
 
 
