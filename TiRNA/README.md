@@ -184,7 +184,7 @@ For questions or issues regarding TiRNA, please contact: zjtan@whu.edu.cn.
 References
 ================================================================
 
-- [1] Wang X, Lou E, Yu S, Tan YL, Shi YZ, & Tan ZJ. 2025. TiRNA: a coarse-grained method with temperature and ion effects for RNA structure folding and prediction. In preparation.
+- [1] Wang X, Lou E, Yu S, Tan YL, Shi YZ, & Tan ZJ. "TiRNA: a coarse-grained method with temperature and ion effects for RNA structure folding and prediction." Nucleic Acids Research 54.2 (2026): gkaf1499.
 - [2] Wang X, Tan YL, Yu S, Shi YZ, & Tan ZJ. 2023. Predicting 3D structures and stabilities for complex RNA pseudoknots in ion solutions. Biophys J. 122, 1503-1516.
 - [3] Shi YZ, Wang FH, Wu YY, & Tan ZJ. 2014. A coarse-grained model with implicit salt for RNAs: Predicting 3D structure, stability and salt effect. J Chem Phys. 141, 105102.
 - [4] Stasiewicz J, Mukherjee S, Nithin C, & Bujnicki JM. 2019. QRNAS: Software tool for refinement of nucleic acid structures. BMC Struct Biol. 19, 5.
